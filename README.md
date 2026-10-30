@@ -5,6 +5,11 @@ Projet d'application PWA pour suivre ses candidatures lors de recherches d'emplo
 
 J'ai initialisé un projet en JAVA avec le framework Spring Boot en utilisant le configurateur Maven : https://start.spring.io/.
 
+## Prérequis
+
+- Java 21
+- Docker (avec Docker Compose)
+
 ### Reference Documentation
 Précisions :
 
@@ -33,8 +38,35 @@ Précisions :
 * Flyway Migration
 * Lombok
 
-### Lancer l'application
+### Lancer le projet en local
 
-Dans le dossier backend : 
-* ./mvnw spring-boot:run
+#### 1. Démarrer la base de données
+
+PostgreSQL est fourni via Docker, uniquement pour le développement local.
+Depuis la racine du dépôt :
+
+```bash
+docker compose up -d
+```
+
+Cela crée une base `suivi` accessible sur `localhost:5432`
+(utilisateur `suivi`, mot de passe `suivi`, identifiants de développement uniquement).
+
+Commandes utiles :
+
+```bash
+docker compose ps         # vérifier que la base tourne
+docker compose down       # arrêter la base (les données sont conservées)
+docker compose down -v    # arrêter et supprimer les données
+```
+
+#### 2. Démarrer le backend
+
+```bash
+cd backend
+./mvnw spring-boot:run
+```
+
+Au démarrage, Flyway crée automatiquement les tables.
+L'API est ensuite disponible sur http://localhost:8080.
 
