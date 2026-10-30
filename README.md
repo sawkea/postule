@@ -33,3 +33,8 @@ Précisions :
 * Flyway Migration
 * Lombok
 
+### Lancer l'application
+
+Dans le dossier backend : 
+* ./mvnw spring-boot:run
+
