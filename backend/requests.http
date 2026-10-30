@@ -1,0 +1,56 @@
+### Fichier de requêtes de test.
+### Fonctionne avec le client HTTP d'IntelliJ et avec l'extension "REST Client" de VS Code.
+### Lancer l'application, puis cliquer sur "Run" au-dessus de chaque requête.
+
+### Lister toutes les candidatures
+GET http://localhost:8080/api/applications
+
+### Créer une candidature
+POST http://localhost:8080/api/applications
+Content-Type: application/json
+
+{
+  "company": "Exemple SA",
+  "position": "Développeuse fullstack",
+  "sentDate": "2026-10-30",
+  "type": "OFFER_RESPONSE",
+  "source": "Site de l'entreprise",
+  "status": "SENT",
+  "followUpDate": "2026-11-09",
+  "notes": "Candidature de test"
+}
+
+### Créer une candidature invalide (entreprise vide, type absent) : doit renvoyer 400
+POST http://localhost:8080/api/applications
+Content-Type: application/json
+
+{
+  "company": "",
+  "position": "Test"
+}
+
+### Lire une candidature (remplace 1 par un id existant)
+GET http://localhost:8080/api/applications/1
+
+### Filtrer par statut
+GET http://localhost:8080/api/applications?status=SENT
+
+### Modifier une candidature (remplace 1 par un id existant)
+PUT http://localhost:8080/api/applications/1
+Content-Type: application/json
+
+{
+  "company": "Exemple SA",
+  "position": "Développeuse fullstack",
+  "sentDate": "2026-10-30",
+  "type": "OFFER_RESPONSE",
+  "status": "INTERVIEW_SCHEDULED",
+  "followUpDate": "2026-11-09",
+  "notes": "Entretien prévu"
+}
+
+### Supprimer une candidature (remplace 1 par un id existant)
+DELETE http://localhost:8080/api/applications/1
+
+### Id inexistant : doit renvoyer 404
+GET http://localhost:8080/api/applications/99999

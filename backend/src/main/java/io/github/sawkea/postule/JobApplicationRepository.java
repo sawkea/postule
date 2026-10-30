@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 // Spring Data génère l'implémentation à partir du nom des méthodes.
-// Toutes les méthodes filtrent sur l'utilisateur : c'est la règle d'or du multi-utilisateur.
+// Toutes les méthodes filtrent sur l'utilisateur : c'est la règle du multi-utilisateur.
 // Ne jamais utiliser findById() seul dans un service exposé à l'API.
 public interface JobApplicationRepository extends JpaRepository<JobApplication, Long> {
 
