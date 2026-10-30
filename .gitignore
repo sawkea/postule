@@ -3,36 +3,110 @@
 # Dépôt public : rien de personnel ni de secret ne doit être versionné
 # ============================================================
 
-HELP.md
-target/
-.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+/backend/target/
+/backend/.mvn/wrapper/maven-wrapper.jar
 
-### STS ###
-.apt_generated
+Fichiers temporaires et compilation Java
+
+*.class
+
+Spring Tool Suite / Eclipse
+
+.apt_generated/
 .classpath
 .factorypath
 .project
-.settings
+.settings/
 .springBeans
-.sts4-cache
+.sts4-cache/
 
-### IntelliJ IDEA ###
-.idea
+IntelliJ IDEA
+
+.idea/
 *.iws
 *.iml
 *.ipr
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
+NetBeans
 
-### VS Code ###
+nbproject/private/
+nbbuild/
+nbdist/
+.nb-gradle/
+
+==============================
+
+FRONTEND - NODE / ANGULAR
+
+==============================
+
+Dépendances Node.js
+
+node_modules/
+npm-debug.log
+yarn-error.log
+
+Fichiers de compilation
+
+dist/
+build/
+out-tsc/
+bazel-out/
+tmp/
+
+Angular
+
+.angular/cache/
+.sass-cache/
+
+==============================
+
+EDITEURS
+
+==============================
+
+Visual Studio Code
+
 .vscode/
+.history/
+
+==============================
+
+TESTS ET COUVERTURE
+
+==============================
+
+coverage/
+typings/
+screenshots/
+testem.log
+
+
+==============================
+
+FICHIERS SENSIBLES
+
+==============================
+
+.env
+.env.*
+!.env.example
+
+==============================
+
+FICHIERS SYSTEME
+
+==============================
+
+.DS_Store
+Thumbs.db
+connect.lock
+libpeerconnection.log
+
+==============================
+
+FICHIERS DIVERS
+
+==============================
+
+HELP.md

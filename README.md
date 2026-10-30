@@ -9,6 +9,8 @@ J'ai initialisé un projet en JAVA avec le framework Spring Boot en utilisant le
 
 - Java 21
 - Docker (avec Docker Compose)
+- Node.js v26
+- Npm v12
 
 ### Reference Documentation
 Précisions :
@@ -70,3 +72,26 @@ cd backend
 Au démarrage, Flyway crée automatiquement les tables.
 L'API est ensuite disponible sur http://localhost:8080.
 
+#### 3. Frontend
+
+```bash
+npx @angular/cli new frontend --skip-git # pour créer un projet angular sans dépôt GIT
+```
+
+```bash
+ ng add @angular/pwa # transforme l'application angular en PWA (Progressive Web App)
+ ```
+
+```bash
+ng serve # lancer le server et ouvrir : http://localhost:4200
+ ```
+
+```bash
+npx ng serve --proxy-config proxy.conf.json # (création d'un fichier proxy pour appeler la route /api.. sans erreur CORS
+ ```
+
+ * j'ai ajouté dans le package.json dans le start la commande directement : il faudra juste taper : npm start pour lancer et ouvrir la page sur :
+
+```bash
+ http://localhost:4200/api/applications
+  ```
