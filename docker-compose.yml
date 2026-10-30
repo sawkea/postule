@@ -1,0 +1,17 @@
+# Base PostgreSQL pour le développement local uniquement.
+# Les identifiants ci-dessous sont factices et ne servent qu'en local.
+services:
+  db:
+    image: postgres:16
+    container_name: suivi-db
+    environment:
+      POSTGRES_DB: suivi
+      POSTGRES_USER: suivi
+      POSTGRES_PASSWORD: suivi
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+ 
+volumes:
+  pgdata:
