@@ -1,41 +1,65 @@
 {
-  "hash": "2dc8847c",
-  "configHash": "d2736883",
+  "hash": "08285778",
+  "configHash": "fcd7ab41",
   "lockfileHash": "e2a0f8c7",
-  "browserHash": "ff2ea6aa",
+  "browserHash": "3d277123",
   "optimized": {
+    "@angular/common": {
+      "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "86271396",
+      "needsInterop": false
+    },
+    "@angular/common/http": {
+      "src": "../../../../../../node_modules/@angular/common/fesm2022/http.mjs",
+      "file": "@angular_common_http.js",
+      "fileHash": "f50cc823",
+      "needsInterop": false
+    },
     "@angular/core": {
       "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "9e7d930e",
+      "fileHash": "0c1a01c2",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "16c6a27d",
+      "fileHash": "ab305a8c",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "c018b3e4",
+      "fileHash": "87bfc58f",
       "needsInterop": false
     },
     "@angular/service-worker": {
       "src": "../../../../../../node_modules/@angular/service-worker/fesm2022/service-worker.mjs",
       "file": "@angular_service-worker.js",
-      "fileHash": "6095b1a6",
+      "fileHash": "022437f7",
       "needsInterop": false
     }
   },
   "chunks": {
+    "_xhr-chunk-BYrOC2sy": {
+      "file": "_xhr-chunk-BYrOC2sy.js",
+      "isDynamicEntry": false
+    },
+    "common-snvyBGEu": {
+      "file": "common-snvyBGEu.js",
+      "isDynamicEntry": false
+    },
     "core-RGofNjFx": {
       "file": "core-RGofNjFx.js",
       "isDynamicEntry": false
     },
-    "platform-browser-BOaNxjES": {
-      "file": "platform-browser-BOaNxjES.js",
+    "http-XmTW6hRR": {
+      "file": "http-XmTW6hRR.js",
+      "isDynamicEntry": false
+    },
+    "platform-browser-BlQq9NsO": {
+      "file": "platform-browser-BlQq9NsO.js",
       "isDynamicEntry": false
     },
     "switchMap-BAeZE3lN": {

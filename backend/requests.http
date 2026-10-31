@@ -9,6 +9,16 @@ GET http://localhost:8080/api/applications
 POST http://localhost:8080/api/applications
 Content-Type: application/json
 
+# {
+#   "company": "Exemple SA",
+#   "position": "Développeuse fullstack",
+#   "sentDate": "2026-10-30",
+#   "type": "OFFER_RESPONSE",
+#   "source": "Site de l'entreprise",
+#   "status": "SENT",
+#   "followUpDate": "2026-11-09",
+#   "notes": "Candidature de test"
+# }
 {
   "company": "Exemple SA",
   "position": "Développeuse fullstack",
@@ -48,6 +58,8 @@ Content-Type: application/json
   "followUpDate": "2026-11-09",
   "notes": "Entretien prévu"
 }
+
+
 
 ### Supprimer une candidature (remplace 1 par un id existant)
 DELETE http://localhost:8080/api/applications/1

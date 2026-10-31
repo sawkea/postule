@@ -1,0 +1,33 @@
+.table-wrapper {
+  overflow-x: auto; /* sur mobile, le tableau défile dans son conteneur */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+th {
+  background: #f3f3f3;
+}
+
+.error {
+  color: #a00000;
+}
+
+/* Masqué visuellement mais lu par les lecteurs d'écran */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
