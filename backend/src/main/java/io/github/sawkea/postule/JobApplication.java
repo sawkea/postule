@@ -13,6 +13,8 @@ import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+// entités JOB_APPLICATIONS 
+// elle contient les informations sur les candidatures, les entretiens et les contacts associés à chaque candidature.
 @Entity
 @Table(name = "job_applications")
 @Getter
@@ -93,7 +95,7 @@ public class JobApplication {
     @Column(nullable = false)
     private Status status = Status.TO_APPLY;
 
-    // Ta colonne "Pourquoi ?" (motif de refus, etc.)
+    // Colonne "Pourquoi ?" (motif de refus, etc.)
     @Column(name = "status_reason", columnDefinition = "text")
     private String statusReason;
 
@@ -114,15 +116,12 @@ public class JobApplication {
     @Column(name = "updated_at", nullable = false)
     private Instant updatedAt;
 
-    // mappedBy : le côté propriétaire de la relation est le champ "jobApplication" des enfants.
-    // orphanRemoval : retirer un entretien de la liste le supprime en base.
     @OneToMany(mappedBy = "jobApplication", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Interview> interviews = new ArrayList<>();
 
     @OneToMany(mappedBy = "jobApplication", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Contact> contacts = new ArrayList<>();
 
-    // Méthodes utilitaires pour garder les deux côtés de la relation cohérents.
     public void addInterview(Interview interview) {
         interviews.add(interview);
         interview.setJobApplication(this);
@@ -133,4 +132,3 @@ public class JobApplication {
         contact.setJobApplication(this);
     }
 }
-

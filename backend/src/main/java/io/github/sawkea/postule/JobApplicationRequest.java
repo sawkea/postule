@@ -8,10 +8,11 @@ import java.time.LocalDate;
  
 /**
  * Ce que le client envoie pour créer ou modifier une candidature.
- * Un "record" Java est une classe immuable : les getters, equals et toString sont générés.
  * Les annotations déclenchent la validation grâce à @Valid dans le contrôleur.
  * Remarque : ni l'id, ni l'utilisateur, ni les dates de création n'y figurent,
  * le client n'a pas à les fournir (ni à les imposer).
+ * Un "record" Java est une classe immuable : les getters, equals et toString sont générés automatiquement.
+ * Utilisation de record (pour stoker et transporter les données) au lieu d'une classe classique pour simplifier le code et éviter les setters inutiles.
  */
 public record JobApplicationRequest(
         @NotBlank @Size(max = 255) String company,

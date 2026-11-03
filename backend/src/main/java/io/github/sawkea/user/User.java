@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 
+// entités USERS
 // La table s'appelle "users" car "user" est un mot réservé en PostgreSQL.
 @Entity
 @Table(name = "users")

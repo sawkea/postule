@@ -14,7 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
- 
+
+// controller REST pour gérer les candidatures (JobApplication) via l'API REST.
 @RestController
 @RequestMapping("/api/applications")
 public class JobApplicationController {

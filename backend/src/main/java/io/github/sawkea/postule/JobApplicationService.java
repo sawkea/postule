@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-@Transactional(readOnly = true) // par défaut, lecture seule ; les méthodes d'écriture le surchargent
+@Transactional(readOnly = true) // par défaut, lecture seule. Les méthodes d'écriture le surchargent
 public class JobApplicationService {
 
     private final JobApplicationRepository repository;
@@ -20,6 +20,7 @@ public class JobApplicationService {
         this.currentUser = currentUser;
     }
 
+    // LIST 
     public List<JobApplicationResponse> findAll(JobApplication.Status status) {
         Long userId = currentUser.get().getId();
         List<JobApplication> result = (status == null)
@@ -27,11 +28,11 @@ public class JobApplicationService {
                 : repository.findByUserIdAndStatus(userId, status);
         return result.stream().map(JobApplicationResponse::from).toList();
     }
-
+    // FIND 
     public JobApplicationResponse findById(Long id) {
         return JobApplicationResponse.from(getOwned(id));
     }
-
+    // CREATE 
     @Transactional
     public JobApplicationResponse create(JobApplicationRequest request) {
         JobApplication application = new JobApplication();
@@ -39,7 +40,7 @@ public class JobApplicationService {
         apply(application, request);
         return JobApplicationResponse.from(repository.save(application));
     }
-
+    // UPDATE 
     @Transactional
     public JobApplicationResponse update(Long id, JobApplicationRequest request) {
         JobApplication application = getOwned(id);
@@ -48,7 +49,7 @@ public class JobApplicationService {
         // les changements sont enregistrés automatiquement à la fin de la méthode.
         return JobApplicationResponse.from(application);
     }
-
+    // DELETE 
     @Transactional
     public void delete(Long id) {
         repository.delete(getOwned(id));
@@ -61,7 +62,7 @@ public class JobApplicationService {
         return repository.findByIdAndUserId(id, user.getId())
                 .orElseThrow(() -> new ResourceNotFoundException("Candidature introuvable : " + id));
     }
-
+    // 
     private void apply(JobApplication a, JobApplicationRequest r) {
         a.setCompany(r.company());
         a.setPosition(r.position());

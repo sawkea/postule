@@ -6,6 +6,7 @@ import java.time.Instant;
 import lombok.Getter;
 import lombok.Setter;
 
+// // entités INTERVIEWS
 @Entity
 @Table(name = "interviews")
 @Getter
