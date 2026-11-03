@@ -4,6 +4,10 @@ import { provideHttpClient } from '@angular/common/http';
 import { routes } from './app.routes';
 import { provideServiceWorker } from '@angular/service-worker';
 
+// Configuration de l'application Angular
+// incluant les écouteurs d'erreurs globales
+// le routeur
+// le client HTTP et le service worker.
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),

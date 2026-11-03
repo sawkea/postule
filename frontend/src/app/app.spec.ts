@@ -1,6 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { App } from './app';
 
+// Test du composant racine de l'application Angular
 describe('App', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({

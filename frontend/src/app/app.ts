@@ -1,6 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { ApplicationList } from './applications/application-list';
 
+// Composant racine de l'application Angular
 @Component({
   selector: 'app-root',
   imports: [ApplicationList],

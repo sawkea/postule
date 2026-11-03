@@ -12,6 +12,7 @@ export class JobApplicationService {
   // Adresse relative : c'est le proxy (en développement) qui la redirige vers localhost:8080.
   private readonly baseUrl = '/api/applications';
 
+  // Récupère toutes les candidatures de l'utilisateur connecté.
   findAll(): Observable<JobApplication[]> {
     return this.http.get<JobApplication[]>(this.baseUrl);
   }
